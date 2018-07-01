@@ -57,7 +57,9 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                validate(editText6.getText().toString(), editText2.getText().toString());
+                if (validateLogin()) {
+                    validate(editText6.getText().toString(), editText2.getText().toString());
+                }
             }
         });
         TextForget.setOnClickListener(this);
@@ -120,6 +122,20 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                     Toast.makeText(Login.this, "Something is wrong, Login has failed", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+    
+       private Boolean validateLogin(){
+        Boolean result = false;
+
+        String email = editText2.getText().toString();
+        String password = editText6.getText().toString();
+
+        if (password.isEmpty() || email.isEmpty()){
+            Toast.makeText(this, "Please enter valid details", Toast.LENGTH_SHORT).show();
+        }else {
+            result = true;
+        }
+        return result;
     }
 
     @Override
