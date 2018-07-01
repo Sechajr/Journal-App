@@ -15,7 +15,6 @@
         android:layout_marginTop="16dp"
         android:background="@drawable/rounded_button"
         android:text="Save"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
